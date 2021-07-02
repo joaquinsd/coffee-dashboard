@@ -1,0 +1,66 @@
+<div class="container">
+  <h1 class="text-center my-3">Coffee Store Dashboard</h1>
+
+  <div class="row justify-content-center">
+    <h4 class="text-center">Monthly Sales (Last 12 Months) </h4>
+    <div class="col-4">
+      <%= column_chart @last12m_sales, prefix: "$"%>
+      <p class="text-center">Sales In CLP</p>
+    </div>
+    <div class="col-4">
+      <%= column_chart @last12m_sales_count %>
+      <p class="text-center"> Amount of Sales</p>
+    </div>
+    <div class="col-4"> 
+      <%= column_chart @last12m_sales_average, prefix: "$" %>
+      <p class="text-center">Average Sale Ticket </p>
+    </div>
+  </div>
+<hr>
+  <div>
+    <h4 class="text-center" >Amount of Sales By Coffee Origin</h4>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_origin_12m"] %>
+        <p class="text-center">Last 12 months</p>
+      </div>
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_origin_6m"] %>
+        <p class="text-center">Last 6 months</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_origin_3m"] %>
+        <p class="text-center">Last 3 months</p>
+      </div>
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_origin_1m"] %>
+        <p class="text-center">Last month</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <h4 class="text-center" >Amount of Sales By Coffee Blend</h4>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_blend_12m"] %>
+        <p class="text-center">Last 12 months</p>
+      </div>
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_blend_6m"] %>
+        <p class="text-center">Last 6 months</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_blend_3m"] %>
+        <p class="text-center">Last 3 months</p>
+      </div>
+      <div class="col-6">
+        <%= pie_chart @hash["sales_by_blend_1m"] %>
+        <p class="text-center">Last month</p>
+      </div>
+    </div>
+  </div>
